@@ -331,4 +331,12 @@ footer p {
         padding: 0 5%;
         margin-top: 4rem;
     }
+
+    .video-container {
+        background-color: #050505;
+    }
+
+    #bg-video {
+        object-fit: contain;
+    }
 }

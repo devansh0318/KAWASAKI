@@ -220,6 +220,10 @@ html {
 
 #experience {
     background-color: #050505;
+    background-image: linear-gradient(to right, rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.2)), url('img2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Stats Slab */

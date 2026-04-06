@@ -3,22 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Register ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero Section Animations
-    const heroTimeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "+=150%",
-            scrub: 1,
-            pin: true
-        }
-    });
-    
-    heroTimeline
-        .to(".line1", { y: 0, rotateX: 0, opacity: 1, duration: 1 })
-        .to(".line2", { y: 0, rotateX: 0, opacity: 1, duration: 1 })
-        .to(".line3", { y: 0, rotateX: 0, opacity: 1, duration: 1 })
-        .to({}, {duration: 0.5});
+    // Hero text removed
 
     // Scroll Animations for Sections
     gsap.utils.toArray('.content-block').forEach(block => {
@@ -66,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Parallax effect for video
-    gsap.to(".video-container", {
+    gsap.to(".hero .video-container", {
         scrollTrigger: {
             trigger: ".hero",
             start: "top top",

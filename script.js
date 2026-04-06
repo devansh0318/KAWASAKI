@@ -3,6 +3,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Register ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
+    // Set higher refresh rate for GSAP
+    gsap.ticker.fps(120);
+
+    // Optimize video playback (play only when in viewport to reduce lag)
+    const videos = document.querySelectorAll('video');
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.play().catch(e => console.log('Autoplay prevented', e));
+            } else {
+                entry.target.pause();
+            }
+        });
+    }, { threshold: 0.1 });
+
+    videos.forEach(video => {
+        videoObserver.observe(video);
+    });
+
     // Hero text removed
 
     // Scroll Animations for Sections
@@ -58,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
             end: "bottom top",
             scrub: true
         },
-        y: "30%",
+        yPercent: 30,
         ease: "none"
     });
 
